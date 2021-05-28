@@ -32,6 +32,9 @@
 ///////Prototipos////////
 void confi(void);
 void ISR (void);
+//////VARIABLES/////
+int motor;
+int ciclo;
 
 
 /////Interrupcion///////////
@@ -39,16 +42,37 @@ void ISR (void);
 void __interrupt() ISR(void){
     if (PIR1bits.ADIF){
         if(ADCON0bits.CHS == 0){
-            CCPR1L = (ADRESH>>1)+125;
+            CCPR1L = (ADRESH>>1)+127;
+        }
+        else if(ADCON0bits.CHS == 1) {
             CCPR2L = (ADRESH>>1)+125;
         }
-        else {
+        else if (ADCON0bits.CHS == 2){
+           motor = (ADRESH);
+          
+        }
+        PIR1bits.ADIF = 0;
+    }
+    
+   ////INT TMR0/////
+    if (INTCONbits.T0IF ==1){
+        ciclo++;
+        if (ciclo > motor) {
+            RD0 = 0;
+            RD1 = 0;
             
         }
-//        else if (ADCON0bits.CHS == 1){
-//            CCPR2L = (ADRESH>>1)+125;
-//        }
-        PIR1bits.ADIF = 0;
+        else {
+            RD0 = 1;
+            RD1 =1;
+          
+        }
+       
+        if (ciclo == 255)
+        {
+            ciclo = 0;
+        }
+        INTCONbits.T0IF = 0;
     }
     return;
 }
@@ -59,37 +83,31 @@ void main(void) {
     
     while(1)
     {
-    ADCON0bits.CHS = 0;
-//        if(ADCON0bits.GO == 0){
-//            if (ADCON0bits.CHS == 0){
-//                ADCON0bits.CHS = 0;
-//            }
-////            else if(ADCON0bits.CHS == 1) {
-////                ADCON0bits.CHS = 2;
-////                
-////            }
-////            else if(ADCON0bits.CHS == 2) {
-////                ADCON0bits.CHS = 3;
-////                
-////            }
-////            else if (ADCON0bits.CHS == 3    ) {
-////                ADCON0bits.CHS = 0;
-////                
-////            }
-//            __delay_us(200);
-////            ADCON0bits.GO = 1;
-//        
-//        }
+    
+        if(ADCON0bits.GO == 0){
+            if (ADCON0bits.CHS == 0){
+                ADCON0bits.CHS = 1;
+            }
+            else if (ADCON0bits.CHS == 1){
+                ADCON0bits.CHS = 2;
+            }
+            else if (ADCON0bits.CHS == 2) {
+                ADCON0bits.CHS = 0;
+            }
+            __delay_us(200);
+            ADCON0bits.GO = 1;
+        
+        }
     }
     
     return;
 }
 
 void confi(void){
-  ANSEL = 0b00000011;
+  ANSEL = 0b00000111;
   ANSELH = 0X00;
   //Aqui configuramos entradas y salidas
-  TRISA = 0b00001111;
+  TRISA = 0b00000111;
   TRISD = 0X00;
   
   PORTA = 0X00;
@@ -126,7 +144,12 @@ void confi(void){
   CCP1CONbits.DC1B = 0;
   CCP2CONbits.DC2B0 = 0;
   CCP2CONbits.DC2B1 = 0;
- 
+  
+ // CONFIGURACION TMR0 
+  OPTION_REGbits.T0CS =0;
+  OPTION_REGbits.PSA =0;
+  OPTION_REGbits.PS = 0b011;
+  TMR0 = 246;
   //Configuracion del TMR2
   
   PIR1bits.TMR2IF = 0;
@@ -143,6 +166,7 @@ void confi(void){
   PIE1bits.ADIE = 1;
   INTCONbits.PEIE = 1;
   INTCONbits.GIE = 1;
-
+  INTCONbits.T0IE = 1;
+  INTCONbits.T0IF = 0;
   return;
 }
