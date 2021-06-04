@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/Proyecto2.X.production.hex">
+  <executable name="dist/default/production\Proyecto2.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-<<<<<<< HEAD
-      <used>2065</used>
-      <free>6127</free>
-=======
-      <used>1883</used>
-      <free>6309</free>
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
+      <used>2053</used>
+      <free>6139</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>368</length>
-<<<<<<< HEAD
       <used>34</used>
       <free>334</free>
-=======
-      <used>32</used>
-      <free>336</free>
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
     </memory>
   </executable>
 </project>

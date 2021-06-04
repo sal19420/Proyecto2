@@ -318,7 +318,7 @@ void putch(char dt){
 
 void comunicacioneu (void) {
     
-    __delay_ms(100);    //Printf llama a la funcion Putch para enviar todos los
+    __delay_ms(00);    //Printf llama a la funcion Putch para enviar todos los
     printf("\rQue accion desea ejecutar?: \r"); //caracteres dentro de las comillas
     __delay_ms(100);    //y mostramos todas las opciones del menu
     printf("    (1) Motores \r");
@@ -342,7 +342,7 @@ void comunicacioneu (void) {
         while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
         
         if (RCREG == '1') {
-            __delay_ms(100);
+            __delay_ms(00);
             printf("\r\rQue direccion desea colocar el servo 1:");
             __delay_ms(100);
             printf("\r\r (a)Derecha");
@@ -444,8 +444,8 @@ void comunicacioneu (void) {
         if (RCREG == 'a') {
             PORTBbits.RB0 = 1;
             
-            esc_EEP(sm1, 0x10);
-            esc_EEP(sm2, 0x11);
+            esc_EEP(sm1, 0x17);
+            esc_EEP(sm2, 0x18);
             
             __delay_ms(1000);
             PORTBbits.RB0 = 0;
@@ -455,8 +455,8 @@ void comunicacioneu (void) {
             ADCON0bits.ADON = 0;
             PORTBbits.RB1 = 1;
             
-            lec1 = leer_EEP(0x10);
-            lec2 = leer_EEP(0x11);
+            lec1 = leer_EEP(0x17);
+            lec2 = leer_EEP(0x18);
             
             CCPR1L = (lec1 >> 1) + 125;
             CCPR2L = (lec2 >> 1) + 125;
