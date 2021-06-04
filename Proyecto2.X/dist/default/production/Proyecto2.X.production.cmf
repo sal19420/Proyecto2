@@ -13,18 +13,18 @@
 %PSECTS
 $dist/default/production/Proyecto2.X.production.o
 cinit CODE 0 F F F 2
-text1 CODE 0 F4 F4 7C 2
-text2 CODE 0 1E 1E D6 2
-text3 CODE 0 1CD 1CD 11 2
-text4 CODE 0 1B1 1B1 1C 2
-maintext CODE 0 170 170 41 2
+text1 CODE 0 FD FD 7C 2
+text2 CODE 0 1E 1E DF 2
+text3 CODE 0 1D6 1D6 11 2
+text4 CODE 0 1BA 1BA 1C 2
+maintext CODE 0 179 179 41 2
 cstackCOMMON COMMON 1 70 70 8 1
 cstackBANK0 BANK0 1 24 24 2 1
 intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 20 20 4 1
 bssCOMMON COMMON 1 78 78 5 1
 config CONFIG 4 2007 2007 2 2
-$/tmp/xcCzUxyyC.o
+$/tmp/xcNt8nvgS.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -43,13 +43,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 1DE-1FFF 2
+CONST 1E7-1FFF 2
 ENTRY 3-3 2
-ENTRY 1DE-1FFF 2
+ENTRY 1E7-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 1DE-1FFF 2
+CODE 1E7-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -57,9 +57,9 @@ SFR3 180-18F 1
 COMMON 7D-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 1DE-1FFF 2
+STRCODE 1E7-1FFF 2
 STRING 3-3 2
-STRING 1DE-1FFF 2
+STRING 1E7-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -74,166 +74,165 @@ STRING 1DE-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/Proyecto2.X.production.o
-F cinit CODE >510:/tmp/xcyV5H299.s
-F cinit CODE >513:/tmp/xcyV5H299.s
-F cinit CODE >545:/tmp/xcyV5H299.s
-10 cinit CODE >546:/tmp/xcyV5H299.s
-11 cinit CODE >547:/tmp/xcyV5H299.s
-12 cinit CODE >548:/tmp/xcyV5H299.s
-13 cinit CODE >549:/tmp/xcyV5H299.s
-14 cinit CODE >552:/tmp/xcyV5H299.s
-15 cinit CODE >553:/tmp/xcyV5H299.s
-16 cinit CODE >554:/tmp/xcyV5H299.s
-17 cinit CODE >555:/tmp/xcyV5H299.s
-18 cinit CODE >556:/tmp/xcyV5H299.s
-19 cinit CODE >557:/tmp/xcyV5H299.s
-1A cinit CODE >563:/tmp/xcyV5H299.s
-1A cinit CODE >565:/tmp/xcyV5H299.s
-1B cinit CODE >566:/tmp/xcyV5H299.s
+F cinit CODE >509:/tmp/xcWx5kgNY.s
+F cinit CODE >512:/tmp/xcWx5kgNY.s
+F cinit CODE >544:/tmp/xcWx5kgNY.s
+10 cinit CODE >545:/tmp/xcWx5kgNY.s
+11 cinit CODE >546:/tmp/xcWx5kgNY.s
+12 cinit CODE >547:/tmp/xcWx5kgNY.s
+13 cinit CODE >548:/tmp/xcWx5kgNY.s
+14 cinit CODE >551:/tmp/xcWx5kgNY.s
+15 cinit CODE >552:/tmp/xcWx5kgNY.s
+16 cinit CODE >553:/tmp/xcWx5kgNY.s
+17 cinit CODE >554:/tmp/xcWx5kgNY.s
+18 cinit CODE >555:/tmp/xcWx5kgNY.s
+19 cinit CODE >556:/tmp/xcWx5kgNY.s
+1A cinit CODE >562:/tmp/xcWx5kgNY.s
+1A cinit CODE >564:/tmp/xcWx5kgNY.s
+1B cinit CODE >565:/tmp/xcWx5kgNY.s
 4 intentry CODE >51:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1B1 text4 CODE >121:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1B2 text4 CODE >122:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1B6 text4 CODE >123:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1B8 text4 CODE >125:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1B9 text4 CODE >127:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1BC text4 CODE >128:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1BD text4 CODE >130:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1BF text4 CODE >131:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1C1 text4 CODE >133:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1C2 text4 CODE >135:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1C8 text4 CODE >136:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1C9 text4 CODE >139:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1CC text4 CODE >143:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1CD text3 CODE >145:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1CE text3 CODE >146:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1D2 text3 CODE >147:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1D5 text3 CODE >148:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1D6 text3 CODE >149:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1DC text3 CODE >150:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1DD text3 CODE >152:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1BA text4 CODE >123:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1BB text4 CODE >124:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1BF text4 CODE >125:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1C1 text4 CODE >127:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1C2 text4 CODE >129:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1C5 text4 CODE >130:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1C6 text4 CODE >132:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1C8 text4 CODE >133:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1CA text4 CODE >135:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1CB text4 CODE >137:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1D1 text4 CODE >138:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1D2 text4 CODE >141:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1D5 text4 CODE >145:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1D6 text3 CODE >147:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1D7 text3 CODE >148:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1DB text3 CODE >149:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1DE text3 CODE >150:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1DF text3 CODE >151:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1E5 text3 CODE >152:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1E6 text3 CODE >154:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 1E text2 CODE >51:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 1E text2 CODE >52:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 24 text2 CODE >53:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 2D text2 CODE >54:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 33 text2 CODE >55:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-37 text2 CODE >57:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-38 text2 CODE >58:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-41 text2 CODE >59:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-47 text2 CODE >60:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-4B text2 CODE >61:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-4C text2 CODE >62:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-55 text2 CODE >63:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-5C text2 CODE >64:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-60 text2 CODE >67:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-61 text2 CODE >69:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-65 text2 CODE >71:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-69 text2 CODE >72:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-6A text2 CODE >73:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-6B text2 CODE >74:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-74 text2 CODE >75:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-7D text2 CODE >76:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-86 text2 CODE >78:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-8A text2 CODE >79:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-8C text2 CODE >82:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-8D text2 CODE >83:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-91 text2 CODE >84:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-92 text2 CODE >85:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-9C text2 CODE >86:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-A6 text2 CODE >87:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-B0 text2 CODE >88:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-BD text2 CODE >90:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-BE text2 CODE >91:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-BE text2 CODE >92:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-BF text2 CODE >93:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-C0 text2 CODE >96:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-C0 text2 CODE >97:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-C1 text2 CODE >98:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-C1 text2 CODE >100:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-C5 text2 CODE >101:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-CD text2 CODE >102:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-DB text2 CODE >103:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-DE text2 CODE >104:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-DF text2 CODE >106:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-E0 text2 CODE >107:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-E0 text2 CODE >108:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-E3 text2 CODE >109:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-E4 text2 CODE >113:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-EA text2 CODE >115:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-EC text2 CODE >117:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-ED text2 CODE >120:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-F4 text1 CODE >180:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-F4 text1 CODE >181:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-F8 text1 CODE >182:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-F9 text1 CODE >184:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-FD text1 CODE >185:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-FE text1 CODE >186:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-100 text1 CODE >188:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-102 text1 CODE >189:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-104 text1 CODE >191:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-107 text1 CODE >192:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-108 text1 CODE >193:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-109 text1 CODE >195:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-10C text1 CODE >196:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-10D text1 CODE >197:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-10E text1 CODE >198:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-10F text1 CODE >201:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-110 text1 CODE >202:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-111 text1 CODE >203:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-112 text1 CODE >205:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-118 text1 CODE >206:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-11A text1 CODE >207:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+3B text2 CODE >57:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+3C text2 CODE >58:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+45 text2 CODE >59:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+4B text2 CODE >60:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+53 text2 CODE >61:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+54 text2 CODE >62:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+5D text2 CODE >63:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+64 text2 CODE >67:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+65 text2 CODE >69:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+69 text2 CODE >71:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+6D text2 CODE >72:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+6E text2 CODE >73:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+6F text2 CODE >74:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+78 text2 CODE >75:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+81 text2 CODE >78:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+89 text2 CODE >79:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+8F text2 CODE >80:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+9C text2 CODE >81:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+9F text2 CODE >84:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+A0 text2 CODE >85:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+A4 text2 CODE >86:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+A5 text2 CODE >87:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+AF text2 CODE >88:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+B9 text2 CODE >90:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+C6 text2 CODE >92:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+C7 text2 CODE >93:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+C7 text2 CODE >94:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+C8 text2 CODE >95:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+C9 text2 CODE >98:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+C9 text2 CODE >99:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+CA text2 CODE >100:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+CA text2 CODE >102:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+CE text2 CODE >103:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+D6 text2 CODE >104:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+E4 text2 CODE >105:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+E7 text2 CODE >106:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+E8 text2 CODE >108:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+E9 text2 CODE >109:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+E9 text2 CODE >110:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+EC text2 CODE >111:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+ED text2 CODE >115:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+F3 text2 CODE >117:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+F5 text2 CODE >119:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+F6 text2 CODE >122:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+FD text1 CODE >182:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+FD text1 CODE >183:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+101 text1 CODE >184:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+102 text1 CODE >186:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+106 text1 CODE >187:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+107 text1 CODE >188:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+109 text1 CODE >190:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+10B text1 CODE >191:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+10D text1 CODE >193:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+110 text1 CODE >194:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+111 text1 CODE >195:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+112 text1 CODE >197:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+115 text1 CODE >198:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+116 text1 CODE >199:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+117 text1 CODE >200:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+118 text1 CODE >203:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+119 text1 CODE >204:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+11A text1 CODE >205:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+11B text1 CODE >207:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 121 text1 CODE >208:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-124 text1 CODE >209:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-12B text1 CODE >214:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-12E text1 CODE >215:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-12F text1 CODE >216:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-131 text1 CODE >217:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-135 text1 CODE >218:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-139 text1 CODE >219:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-13D text1 CODE >221:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-13F text1 CODE >222:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-141 text1 CODE >223:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-143 text1 CODE >224:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-144 text1 CODE >225:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-145 text1 CODE >228:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-148 text1 CODE >229:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-149 text1 CODE >230:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-14D text1 CODE >231:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-151 text1 CODE >234:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-152 text1 CODE >235:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-154 text1 CODE >236:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-155 text1 CODE >238:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-159 text1 CODE >239:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-15A text1 CODE >240:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-15D text1 CODE >241:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-15E text1 CODE >244:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-161 text1 CODE >245:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-164 text1 CODE >246:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-165 text1 CODE >247:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-166 text1 CODE >248:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-167 text1 CODE >249:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-168 text1 CODE >250:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-169 text1 CODE >251:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-16A text1 CODE >256:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-16B text1 CODE >257:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-16C text1 CODE >258:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-16D text1 CODE >259:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-16E text1 CODE >260:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-16F text1 CODE >263:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-170 maintext CODE >154:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-170 maintext CODE >155:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-175 maintext CODE >156:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-178 maintext CODE >161:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-17C maintext CODE >162:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-185 maintext CODE >163:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-189 maintext CODE >164:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-18A maintext CODE >165:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-193 maintext CODE >166:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-197 maintext CODE >167:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-198 maintext CODE >168:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1A1 maintext CODE >169:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1A3 maintext CODE >171:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
-1AA maintext CODE >172:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+123 text1 CODE >209:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+12A text1 CODE >210:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+12D text1 CODE >211:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+134 text1 CODE >216:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+137 text1 CODE >217:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+138 text1 CODE >218:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+13A text1 CODE >219:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+13E text1 CODE >220:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+142 text1 CODE >221:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+146 text1 CODE >223:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+148 text1 CODE >224:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+14A text1 CODE >225:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+14C text1 CODE >226:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+14D text1 CODE >227:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+14E text1 CODE >230:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+151 text1 CODE >231:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+152 text1 CODE >232:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+156 text1 CODE >233:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+15A text1 CODE >236:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+15B text1 CODE >237:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+15D text1 CODE >238:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+15E text1 CODE >240:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+162 text1 CODE >241:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+163 text1 CODE >242:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+166 text1 CODE >243:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+167 text1 CODE >246:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+16A text1 CODE >247:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+16D text1 CODE >248:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+16E text1 CODE >249:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+16F text1 CODE >250:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+170 text1 CODE >251:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+171 text1 CODE >252:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+172 text1 CODE >253:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+173 text1 CODE >258:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+174 text1 CODE >259:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+175 text1 CODE >260:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+176 text1 CODE >261:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+177 text1 CODE >262:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+178 text1 CODE >265:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+179 maintext CODE >156:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+179 maintext CODE >157:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+17E maintext CODE >158:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+181 maintext CODE >163:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+185 maintext CODE >164:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+18E maintext CODE >165:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+192 maintext CODE >166:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+193 maintext CODE >167:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+19C maintext CODE >168:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1A0 maintext CODE >169:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1A1 maintext CODE >170:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1AA maintext CODE >171:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1AC maintext CODE >173:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
+1B3 maintext CODE >174:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -247,7 +246,7 @@ FE text1 CODE >186:/Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proy
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-__Hspace_0 1DE 0 ABS 0 - -
+__Hspace_0 1E7 0 ABS 0 - -
 __Hspace_1 7D 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -261,48 +260,47 @@ _IOCB 96 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _RBIF 58 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _WPUB 95 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcCzUxyyC.o
+___sp 0 0 STACK 2 stack /tmp/xcNt8nvgS.o
 _lec1 7A 0 COMMON 1 bssCOMMON dist/default/production/Proyecto2.X.production.o
 _lec2 79 0 COMMON 1 bssCOMMON dist/default/production/Proyecto2.X.production.o
-_lec3 78 0 COMMON 1 bssCOMMON dist/default/production/Proyecto2.X.production.o
-_main 2E0 0 CODE 0 maintext dist/default/production/Proyecto2.X.production.o
+_main 2F2 0 CODE 0 maintext dist/default/production/Proyecto2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-start 18 0 CODE 0 init /tmp/xcCzUxyyC.o
+start 18 0 CODE 0 init /tmp/xcNt8nvgS.o
 __size_of_main 0 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab /tmp/xcCzUxyyC.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcCzUxyyC.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcCzUxyyC.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcCzUxyyC.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcCzUxyyC.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcCzUxyyC.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcNt8nvgS.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcNt8nvgS.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcNt8nvgS.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcNt8nvgS.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcNt8nvgS.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcNt8nvgS.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_leer_EEP 39A 0 CODE 0 text3 dist/default/production/Proyecto2.X.production.o
+_leer_EEP 3AC 0 CODE 0 text3 dist/default/production/Proyecto2.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 _ADRESH 1E 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-__end_of_leer_EEP 3BC 0 CODE 0 text3 dist/default/production/Proyecto2.X.production.o
+__end_of_leer_EEP 3CE 0 CODE 0 text3 dist/default/production/Proyecto2.X.production.o
 _EECON1bits 18C 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _CCPR1L 15 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _CCPR2L 1B 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _EECON2 18D 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _EEDATA 10C 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-__end_of_esc_EEP 39A 0 CODE 0 text4 dist/default/production/Proyecto2.X.production.o
+__end_of_esc_EEP 3AC 0 CODE 0 text4 dist/default/production/Proyecto2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - /tmp/xcCzUxyyC.o
-___stacklo 0 0 ABS 0 - /tmp/xcCzUxyyC.o
+___stackhi 0 0 ABS 0 - /tmp/xcNt8nvgS.o
+___stacklo 0 0 ABS 0 - /tmp/xcNt8nvgS.o
 __size_of_confi 0 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 leer_EEP@direc 71 0 COMMON 1 cstackCOMMON dist/default/production/Proyecto2.X.production.o
 _WPUBbits 95 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production/Proyecto2.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 __pcstackBANK0 24 0 BANK0 1 cstackBANK0 dist/default/production/Proyecto2.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcCzUxyyC.o
+___int_sp 0 0 STACK 2 stack /tmp/xcNt8nvgS.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -342,20 +340,20 @@ _ISR 3C 0 CODE 0 text2 dist/default/production/Proyecto2.X.production.o
 _PR2 92 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _RD2 42 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _RD3 43 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-__S0 1DE 0 ABS 0 - -
+__S0 1E7 0 ABS 0 - -
 __S1 7D 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 esc_EEP@data 71 0 COMMON 1 cstackCOMMON dist/default/production/Proyecto2.X.production.o
-__end_of_ISR 1E8 0 CODE 0 text2 dist/default/production/Proyecto2.X.production.o
+__end_of_ISR 1FA 0 CODE 0 text2 dist/default/production/Proyecto2.X.production.o
 esc_EEP@direc 70 0 COMMON 1 cstackCOMMON dist/default/production/Proyecto2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcCzUxyyC.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcNt8nvgS.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _PIE1bits 8C 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-_esc_EEP 362 0 CODE 0 text4 dist/default/production/Proyecto2.X.production.o
-__pmaintext 2E0 0 CODE 0 maintext dist/default/production/Proyecto2.X.production.o
+_esc_EEP 374 0 CODE 0 text4 dist/default/production/Proyecto2.X.production.o
+__pmaintext 2F2 0 CODE 0 maintext dist/default/production/Proyecto2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 _ADCON0bits 1F 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
@@ -376,10 +374,10 @@ __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 1E8 0 CODE 0 text1 dist/default/production/Proyecto2.X.production.o
+__ptext1 1FA 0 CODE 0 text1 dist/default/production/Proyecto2.X.production.o
 __ptext2 3C 0 CODE 0 text2 dist/default/production/Proyecto2.X.production.o
-__ptext3 39A 0 CODE 0 text3 dist/default/production/Proyecto2.X.production.o
-__ptext4 362 0 CODE 0 text4 dist/default/production/Proyecto2.X.production.o
+__ptext3 3AC 0 CODE 0 text3 dist/default/production/Proyecto2.X.production.o
+__ptext4 374 0 CODE 0 text4 dist/default/production/Proyecto2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -388,12 +386,12 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/Proyecto2.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 362 0 CODE 0 maintext dist/default/production/Proyecto2.X.production.o
+__end_of_main 374 0 CODE 0 maintext dist/default/production/Proyecto2.X.production.o
 _CCP2CONbits 1D 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _EEADR 10D 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _EEDAT 10C 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
-__end_of_confi 2E0 0 CODE 0 text1 dist/default/production/Proyecto2.X.production.o
+__end_of_confi 2F2 0 CODE 0 text1 dist/default/production/Proyecto2.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
@@ -403,7 +401,7 @@ _TRISD 88 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 _ciclo 20 0 BANK0 1 bssBANK0 dist/default/production/Proyecto2.X.production.o
-_confi 1E8 0 CODE 0 text1 dist/default/production/Proyecto2.X.production.o
+_confi 1FA 0 CODE 0 text1 dist/default/production/Proyecto2.X.production.o
 interrupt_function 8 0 CODE 0 intentry dist/default/production/Proyecto2.X.production.o
 _motor 22 0 BANK0 1 bssBANK0 dist/default/production/Proyecto2.X.production.o
 _IOCBbits 96 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
@@ -439,7 +437,7 @@ _CCP1CONbits 17 0 ABS 0 - dist/default/production/Proyecto2.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 D 1
-intentry 0 4 8 1DA 2
+intentry 0 4 8 1E3 2
 reset_vec 0 0 0 3 2
 bssBANK0 1 20 20 6 1
 # %NOTES Section

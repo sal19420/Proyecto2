@@ -2675,16 +2675,16 @@ void __attribute__((picinterrupt(("")))) ISR(void){
     if (PIR1bits.ADIF){
         if(ADCON0bits.CHS == 0){
             CCPR1L = (ADRESH>>1)+127;
-            lec1 = ADRESH;
+            lec1 =(ADRESH>>1)+127;
 
         }
         else if(ADCON0bits.CHS == 1) {
-            CCPR2L = (ADRESH>>1)+125;
-            lec2 = ADRESH;
+            CCPR2L = (ADRESH>>1)+127;
+            lec2 = (ADRESH>>1)+127;
         }
         else if (ADCON0bits.CHS == 2){
            motor = (ADRESH);
-           lec3 = motor;
+
 
         }
         PIR1bits.ADIF = 0;
@@ -2696,10 +2696,12 @@ void __attribute__((picinterrupt(("")))) ISR(void){
             PORTBbits.RB6 = 1;
             lec1 = leer_EEP (0x17);
             lec2 = leer_EEP (0x18);
-            lec3 = leer_EEP(0x19);
 
-            CCPR1L = lec1;
-            CCPR2L = lec2;
+
+            CCPR1L = (lec1 >> 1)+127;
+            CCPR2L = (lec2 >> 1)+127;
+            _delay((unsigned long)((1000)*(8000000/4000.0)));
+            ADCON0bits.ADON = 1;
 
 
         }
@@ -2707,7 +2709,7 @@ void __attribute__((picinterrupt(("")))) ISR(void){
             PORTBbits.RB7 = 1;
             esc_EEP (lec1, 0x17);
             esc_EEP (lec2, 0x18);
-            esc_EEP (lec3, 0x19);
+
             _delay((unsigned long)((1000)*(8000000/4000.0)));
 
         }

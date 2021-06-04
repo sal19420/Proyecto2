@@ -13,13 +13,13 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "51 /Users/josuesalazar/MPLABXProjects/Proyecto2/Proyecto2.X/Proyecto2.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"121
+"123
 [v _esc_EEP esc_EEP `(v  1 e 1 0 ]
-"145
+"147
 [v _leer_EEP leer_EEP `(uc  1 e 1 0 ]
-"154
+"156
 [v _main main `(v  1 e 1 0 ]
-"180
+"182
 [v _confi confi `(v  1 e 1 0 ]
 "59 /Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -295,40 +295,38 @@
 [v _lec1 lec1 `uc  1 e 1 0 ]
 "43
 [v _lec2 lec2 `uc  1 e 1 0 ]
-"44
-[v _lec3 lec3 `uc  1 e 1 0 ]
-"154
+"156
 [v _main main `(v  1 e 1 0 ]
 {
-"178
-} 0
 "180
+} 0
+"182
 [v _confi confi `(v  1 e 1 0 ]
 {
-"263
+"265
 } 0
 "51
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"120
+"122
 } 0
-"145
+"147
 [v _leer_EEP leer_EEP `(uc  1 e 1 0 ]
 {
 [v leer_EEP@direc direc `uc  1 a 1 wreg ]
-"149
+"151
 [v leer_EEP@data data `uc  1 a 1 2 ]
-"145
+"147
 [v leer_EEP@direc direc `uc  1 a 1 wreg ]
 [v leer_EEP@direc direc `uc  1 a 1 1 ]
-"152
+"154
 } 0
-"121
+"123
 [v _esc_EEP esc_EEP `(v  1 e 1 0 ]
 {
 [v esc_EEP@data data `uc  1 a 1 wreg ]
 [v esc_EEP@data data `uc  1 a 1 wreg ]
 [v esc_EEP@direc direc `uc  1 p 1 0 ]
 [v esc_EEP@data data `uc  1 a 1 1 ]
-"143
+"145
 } 0
