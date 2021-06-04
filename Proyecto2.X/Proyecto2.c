@@ -35,20 +35,13 @@ void confi(void);
 void ISR (void);
 void esc_EEP (char data, char direc);
 char leer_EEP (char direc);
-<<<<<<< HEAD
 void putch(char dt);
-=======
-void putch(char data);
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 void comunicacioneu (void);
 //////VARIABLES/////
 int motor;
 int ciclo;
-<<<<<<< HEAD
 char sm1;
 char sm2;
-=======
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 char data;
 char direc;
 char lec1;
@@ -64,7 +57,6 @@ char bandera;
 void __interrupt() ISR(void){
     if (PIR1bits.ADIF){
         if(ADCON0bits.CHS == 0){
-<<<<<<< HEAD
             sm1 = ADRESH;
             
             CCPR1L = (sm1 >> 1)+127;
@@ -79,15 +71,6 @@ void __interrupt() ISR(void){
             CCPR2L = (sm2 >> 1)+127;
             CCP2CONbits.DC2B1 = sm2 & 0b01;
             CCP2CONbits.DC2B0 = (sm2 >> 7); 
-=======
-            CCPR1L = (ADRESH>>1)+127;
-            lec1 =(ADRESH>>1)+127;
-            
-        }
-        else if(ADCON0bits.CHS == 1) {
-            CCPR2L = (ADRESH>>1)+127;
-            lec2 = (ADRESH>>1)+127; 
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
         }
         else if (ADCON0bits.CHS == 2){
            motor = (ADRESH);
@@ -114,18 +97,12 @@ void __interrupt() ISR(void){
         }
         else if (PORTBbits.RB0 == 0){
             PORTBbits.RB7 = 1;
-<<<<<<< HEAD
             esc_EEP (sm1, 0x17);
             esc_EEP (sm2, 0x18);
-=======
-            esc_EEP (lec1, 0x17);
-            esc_EEP (lec2, 0x18);
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
    
             __delay_ms(1000);
         
         }
-<<<<<<< HEAD
         else if (PORTBbits.RB2 == 0) {
             
             if (bandera == 0) {
@@ -137,8 +114,6 @@ void __interrupt() ISR(void){
                 bandera = 0;
             }
         }
-=======
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
         else {
             PORTBbits.RB6 = 0;
             PORTBbits.RB7 = 0;
@@ -150,8 +125,10 @@ void __interrupt() ISR(void){
    ////INT TMR0/////
     if (INTCONbits.T0IF ==1){
         ciclo++;
-        if (ciclo > motor) {
-            RD2 = 0;
+        INTCONbits.T0IF = 0;
+        TMR0 = 131;
+        if (ciclo >= motor) {
+            PORTDbits.RD2 = 0;
             RD3 = 0;
             
         }
@@ -161,7 +138,7 @@ void __interrupt() ISR(void){
           
         }
        
-        if (ciclo == 255)
+        if (ciclo == 256)
         {
             ciclo = 0;
         }
@@ -197,11 +174,7 @@ char leer_EEP (char direc){
     EEADR = direc;
     EECON1bits.EEPGD = 0;
     EECON1bits.RD = 1;
-<<<<<<< HEAD
     char data = EEDAT;
-=======
-    char data = EEDATA;
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
     return data; 
    
 }
@@ -241,19 +214,11 @@ void confi(void){
   //Aqui configuramos entradas y salidas
   TRISA = 0b00000111;
   TRISD = 0X00;
-<<<<<<< HEAD
   TRISB = 0x07;
   
   WPUB = 0X07;
   IOCB = 0x07;    
   
-=======
-  TRISB = 0b00000111;
-  
-  WPUB = 0X03;
-  IOCB = 0x03;    
-  
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
   PORTB = 0X00;
   PORTA = 0X00;
   PORTD = 0X00;
@@ -294,7 +259,7 @@ void confi(void){
   OPTION_REGbits.T0CS =0;
   OPTION_REGbits.PSA =0;
   OPTION_REGbits.PS = 0b011;
-  TMR0 = 246;
+  TMR0 = 131;
   //Configuracion del TMR2
   
   PIR1bits.TMR2IF = 0;
@@ -345,15 +310,9 @@ void confi(void){
 }
 //**********************************EUSART**************************************
 //******************************************************************************
-<<<<<<< HEAD
 void putch(char dt){
     while (TXIF == 0);      //Esperar a que se pueda enviar un nueva caracter
     TXREG = dt;           //Transmitir un caracter
-=======
-void putch(char data){
-    while (TXIF == 0);      //Esperar a que se pueda enviar un nueva caracter
-    TXREG = data;           //Transmitir un caracter
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
     return;
 }
 
@@ -362,15 +321,9 @@ void comunicacioneu (void) {
     __delay_ms(100);    //Printf llama a la funcion Putch para enviar todos los
     printf("\rQue accion desea ejecutar?: \r"); //caracteres dentro de las comillas
     __delay_ms(100);    //y mostramos todas las opciones del menu
-<<<<<<< HEAD
     printf("    (1) Motores \r");
     __delay_ms(100);
     printf("    (2)  Configurar EEPROM  \r");
-=======
-    printf("    (1) Controlar motores \r");
-    __delay_ms(100);
-    printf("    (2) EEPROM  \r");
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
     __delay_ms(100);
     printf("    (3) Terminar \r");
     
@@ -384,21 +337,13 @@ void comunicacioneu (void) {
         __delay_ms(100);
         printf("\r\r (2)Servomotor 2");
         __delay_ms(100);
-<<<<<<< HEAD
         printf("\r\r (3)DC 1 y 2");
-=======
-        printf("\r\r (3)DC");
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
         
         while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
         
         if (RCREG == '1') {
             __delay_ms(00);
-<<<<<<< HEAD
             printf("\r\rQue direccion desea colocar el servo 1:");
-=======
-            printf("\r\rQue direccion:");
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
             __delay_ms(100);
             printf("\r\r (a)Derecha");
             __delay_ms(100);
@@ -427,11 +372,7 @@ void comunicacioneu (void) {
         
         if (RCREG == '2') {
             __delay_ms(00);
-<<<<<<< HEAD
             printf("\r\rQue funcion le quiera dar al capó:");
-=======
-            printf("\r\rQue altura del aleron:");
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
             __delay_ms(100);
             printf("\r\r (a)Arriba");
             __delay_ms(100);
@@ -460,7 +401,6 @@ void comunicacioneu (void) {
         
         if (RCREG == '3') {
             __delay_ms(00);
-<<<<<<< HEAD
             printf("\r\rQue velocidad le quiera al propulsor y bandera:");
             __delay_ms(100);
             printf("\r\r (a)R de rapidisimo");
@@ -468,15 +408,6 @@ void comunicacioneu (void) {
             printf("\r\r (b)P de parar ");
             __delay_ms(100);
             printf("\r\r (c) D de deuna ");
-=======
-            printf("\r\rQue velocidad:");
-            __delay_ms(100);
-            printf("\r\r (a)Ilegal");
-            __delay_ms(100);
-            printf("\r\r (b)Parar");
-            __delay_ms(100);
-            printf("\r\r (c)Legal");
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
             
             while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
             
@@ -513,13 +444,8 @@ void comunicacioneu (void) {
         if (RCREG == 'a') {
             PORTBbits.RB0 = 1;
             
-<<<<<<< HEAD
             esc_EEP(sm1, 0x10);
             esc_EEP(sm2, 0x11);
-=======
-            esc_EEP(lec1, 0x10);
-            esc_EEP(lec2, 0x11);
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
             
             __delay_ms(1000);
             PORTBbits.RB0 = 0;
@@ -548,11 +474,7 @@ void comunicacioneu (void) {
     
     else if (RCREG == '3') {    //Si presionamos dos enviamos un caracter a PORTB
         __delay_ms(500);    //Preguntamos el caracter
-<<<<<<< HEAD
         printf("\r\r NOS VEMOS EN LA PROXIMA\r");
-=======
-        printf("\r\rAdios\r");
->>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
         bandera = 0;
         PORTBbits.RB5 = 0;
     } 
