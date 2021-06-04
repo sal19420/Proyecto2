@@ -342,7 +342,7 @@ void comunicacioneu (void) {
         while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
         
         if (RCREG == '1') {
-            __delay_ms(00);
+            __delay_ms(100);
             printf("\r\rQue direccion desea colocar el servo 1:");
             __delay_ms(100);
             printf("\r\r (a)Derecha");
