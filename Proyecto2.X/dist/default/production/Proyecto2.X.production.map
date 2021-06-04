@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Proyecto2.X.production.sym \
   --cmf=dist/default/production\Proyecto2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\1TB\AppData\Local\Temp\sjhs.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\1TB\AppData\Local\Temp\sit8.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Proyecto2.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\1TB\AppData\Local\Temp\sjhs.o \
+  -pfunctab=ENTRY -k C:\Users\1TB\AppData\Local\Temp\sit8.o \
   dist/default/production\Proyecto2.X.production.o 
 
 Object code version is 3.11
@@ -28,45 +28,67 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\1TB\AppData\Local\Temp\sjhs.o
+C:\Users\1TB\AppData\Local\Temp\sit8.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\Proyecto2.X.production.o
-                cinit                                 F        F        8        8       0
+                cinit                                 F        F       12        8       0
                 intentry                              4        4        8        8       0
                 config                             2007     2007        2        0       4
-                text2                                7F       7F       68        8       0
-                text1                                17       17       68        8       0
-                maintext                             E7       E7       3E        8       0
-                cstackCOMMON                         70       70        6       70       1
-                bssCOMMON                            76       76        4       70       1
+                text9                               7E2      7E2       1C      C22       0
+                text8                               FEF      FEF       11     1FDE       0
+                text7                               611      611      11B      C22       0
+                text6                               3B0      3B0       22        8       0
+                text5                               3D2      3D2       15        8       0
+                text4                               FE5      FE5        A     1FCA       0
+                text3                               7BA      7BA       28      C22       0
+                text2                                21       21      342        8       0
+                text1                               72C      72C       8E      C22       0
+                maintext                            363      363       4D        8       0
+                cstackBANK0                          20       20        C       20       1
+                cstackCOMMON                         70       70        8       70       1
+                bssBANK0                             2C       2C        6       20       1
+                bssCOMMON                            78       78        6       70       1
+                stringtext                          400      400      211        8       0
+                strings                             3E7      3E7       12      7CE       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              C        C        3         0
-                cinit                                 F        F        8         0
+                cinit                                 F        F       12         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text2                                7F       7F       68         0
-                text1                                17       17       68         0
-                maintext                             E7       E7       3E         0
+                text9                               7E2      7E2       1C         0
+                text8                               FEF      FEF       11         0
+                text7                               611      611      11B         0
+                text6                               3B0      3B0       22         0
+                text5                               3D2      3D2       15         0
+                text4                               FE5      FE5        A         0
+                text3                               7BA      7BA       28         0
+                text2                                21       21      342         0
+                text1                               72C      72C       8E         0
+                maintext                            363      363       4D         0
 
         CLASS   STRCODE        
+                stringtext                          400      400      211         0
 
         CLASS   STRING         
+                strings                             3E7      3E7       12         0
 
         CLASS   CONST          
 
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        6         1
-                bssCOMMON                            76       76        4         1
+                cstackCOMMON                         70       70        8         1
+                bssCOMMON                            78       78        6         1
 
         CLASS   BANK0          
+                cstackBANK0                          20       20        C         1
+                bssBANK0                             2C       2C        6         1
 
         CLASS   BANK1          
 
@@ -99,27 +121,38 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  000121  000125         8       0  CODE        2
-                cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
+                intentry                       000004  0003E3  0003E7         8       0  CODE        2
+                cstackBANK0                    000020  000012  000032        20       1  BANK0       1
+                cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
+                strings                        0003E7  000012  0003F9       7CE       0  STRING      2
+                stringtext                     000400  000211  000611         8       0  STRCODE     2
+                text7                          000611  0001ED  0007FE       C22       0  CODE        2
+                text4                          000FE5  00000A  000FEF      1FCA       0  CODE        2
+                text8                          000FEF  000011  001000      1FDE       0  CODE        2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0020-006F             50           1
+        BANK0            0032-006F             3E           1
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         0125-1FFF            800
-        COMMON           007A-007D              4           1
+                         03F9-03FF              7
+                         07FE-0FE4              2
+                         1000-1FFF            800
         CONST            0003-0003              1           2
-                         0125-1FFF            100
+                         03F9-03FF              7
+                         07FE-0FE4            100
+                         1000-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0125-1FFF            100
+                         03F9-03FF              7
+                         07FE-0FE4            100
+                         1000-1FFF            100
         IDLOC            2000-2003              4           2
-        RAM              0020-006F             50           1
+        RAM              0032-006F             3E           1
                          00A0-00EF             50
                          0110-016F             60
                          0190-01EF             60
@@ -129,48 +162,77 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0125-1FFF           1EDB
+                         03F9-03FF              7
+                         07FE-0FE4            7E7
+                         1000-1FFF           1000
         STRING           0003-0003              1           2
-                         0125-1FFF            100
+                         03F9-03FF              7
+                         07FE-0FE4            100
+                         1000-1FFF            100
 
                                   Symbol Table
 
+?_printf                 cstackBANK0  0021
 _ADCON0bits              (abs)        001F
 _ADCON1bits              (abs)        009F
 _ADRESH                  (abs)        001E
 _ANSEL                   (abs)        0188
 _ANSELH                  (abs)        0189
+_BAUDCTLbits             (abs)        0187
 _CCP1CONbits             (abs)        0017
 _CCP2CONbits             (abs)        001D
 _CCPR1L                  (abs)        0015
 _CCPR2L                  (abs)        001B
+_EEADR                   (abs)        010D
+_EECON1bits              (abs)        018C
+_EECON2                  (abs)        018D
+_EEDAT                   (abs)        010C
 _INTCONbits              (abs)        000B
-_ISR                     text2        007F
+_IOCB                    (abs)        0096
+_IOCBbits                (abs)        0096
+_ISR                     text7        0611
 _OPTION_REGbits          (abs)        0081
 _OSCCONbits              (abs)        008F
 _PIE1bits                (abs)        008C
 _PIR1bits                (abs)        000C
+_PIR2bits                (abs)        000D
 _PORTA                   (abs)        0005
+_PORTB                   (abs)        0006
+_PORTBbits               (abs)        0006
 _PORTD                   (abs)        0008
 _PR2                     (abs)        0092
-_RD0                     (abs)        0040
-_RD1                     (abs)        0041
+_RBIF                    (abs)        0058
+_RCIF                    (abs)        0065
+_RCREG                   (abs)        001A
+_RCSTAbits               (abs)        0018
+_RD2                     (abs)        0042
+_RD3                     (abs)        0043
+_SPBRG                   (abs)        0099
+_SPBRGH                  (abs)        009A
 _T2CONbits               (abs)        0012
 _TMR0                    (abs)        0001
 _TRISA                   (abs)        0085
+_TRISB                   (abs)        0086
 _TRISCbits               (abs)        0087
 _TRISD                   (abs)        0088
+_TXIF                    (abs)        0064
+_TXREG                   (abs)        0019
+_TXSTAbits               (abs)        0098
+_WPUB                    (abs)        0095
+_WPUBbits                (abs)        0095
 __Habs1                  abs1         0000
 __Hbank0                 bank0        0000
 __Hbank1                 bank1        0000
 __Hbank2                 bank2        0000
 __Hbank3                 bank3        0000
+__HbssBANK0              bssBANK0     0000
 __HbssCOMMON             bssCOMMON    0000
-__Hcinit                 cinit        0017
+__Hcinit                 cinit        0021
 __Hclrtext               clrtext      0000
 __Hcode                  code         0000
 __Hcommon                common       0000
 __Hconfig                config       2009
+__HcstackBANK0           cstackBANK0  0000
 __HcstackCOMMON          cstackCOMMON 0000
 __Heeprom_data           eeprom_data  0000
 __Hend_init              end_init     000F
@@ -185,25 +247,28 @@ __Hsfr0                  sfr0         0000
 __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
-__Hspace_0               (abs)        0125
-__Hspace_1               (abs)        007A
+__Hspace_0               (abs)        1000
+__Hspace_1               (abs)        007E
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
 __Hspace_4               (abs)        4010
 __Hstack                 stack        0000
 __Hstrings               strings      0000
+__Hstringtext            stringtext   0000
 __Htext                  text         0000
 __Labs1                  abs1         0000
 __Lbank0                 bank0        0000
 __Lbank1                 bank1        0000
 __Lbank2                 bank2        0000
 __Lbank3                 bank3        0000
+__LbssBANK0              bssBANK0     0000
 __LbssCOMMON             bssCOMMON    0000
 __Lcinit                 cinit        000F
 __Lclrtext               clrtext      0000
 __Lcode                  code         0000
 __Lcommon                common       0000
 __Lconfig                config       0000
+__LcstackBANK0           cstackBANK0  0000
 __LcstackCOMMON          cstackCOMMON 0000
 __Leeprom_data           eeprom_data  0000
 __Lend_init              end_init     000C
@@ -225,9 +290,10 @@ __Lspace_3               (abs)        0000
 __Lspace_4               (abs)        0000
 __Lstack                 stack        0000
 __Lstrings               strings      0000
+__Lstringtext            stringtext   0000
 __Ltext                  text         0000
-__S0                     (abs)        0125
-__S1                     (abs)        007A
+__S0                     (abs)        1000
+__S1                     (abs)        007E
 __S2                     (abs)        0000
 __S3                     (abs)        0000
 ___int_sp                stack        0000
@@ -235,26 +301,72 @@ ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_ISR             text2        00E7
-__end_of__initialization cinit        0013
-__end_of_confi           text1        007F
-__end_of_main            maintext     0125
+__end_of_ISR             text7        072C
+__end_of__initialization cinit        001D
+__end_of__stringtab      strings      03F9
+__end_of_comunicacioneu  text2        0363
+__end_of_confi           text1        07BA
+__end_of_esc_EEP         text6        03D2
+__end_of_leer_EEP        text5        03E7
+__end_of_main            maintext     03B0
+__end_of_printf          text3        07E2
+__end_of_putch           text4        0FEF
+__end_ofi1_esc_EEP       text9        07FE
+__end_ofi1_leer_EEP      text8        1000
 __initialization         cinit        000F
-__pbssCOMMON             bssCOMMON    0076
+__pbssBANK0              bssBANK0     002C
+__pbssCOMMON             bssCOMMON    0078
+__pcstackBANK0           cstackBANK0  0020
 __pcstackCOMMON          cstackCOMMON 0070
 __pintentry              intentry     0004
-__pmaintext              maintext     00E7
-__ptext1                 text1        0017
-__ptext2                 text2        007F
+__pmaintext              maintext     0363
+__pstrings               strings      03E7
+__pstringtext            stringtext   0400
+__ptext1                 text1        072C
+__ptext2                 text2        0021
+__ptext3                 text3        07BA
+__ptext4                 text4        0FE5
+__ptext5                 text5        03D2
+__ptext6                 text6        03B0
+__ptext7                 text7        0611
+__ptext8                 text8        0FEF
+__ptext9                 text9        07E2
 __size_of_ISR            (abs)        0000
+__size_of_comunicacioneu (abs)        0000
 __size_of_confi          (abs)        0000
+__size_of_esc_EEP        (abs)        0000
+__size_of_leer_EEP       (abs)        0000
 __size_of_main           (abs)        0000
-_ciclo                   bssCOMMON    0076
-_confi                   text1        0017
-_main                    maintext     00E7
-_motor                   bssCOMMON    0078
+__size_of_printf         (abs)        0000
+__size_of_putch          (abs)        0000
+__size_ofi1_esc_EEP      (abs)        0000
+__size_ofi1_leer_EEP     (abs)        0000
+__stringbase             strings      03F9
+__stringtab              strings      03E7
+_bandera                 bssCOMMON    0078
+_ciclo                   bssBANK0     002C
+_comunicacioneu          text2        0021
+_confi                   text1        072C
+_esc_EEP                 text6        03B0
+_lec1                    bssCOMMON    007A
+_lec2                    bssCOMMON    0079
+_leer_EEP                text5        03D2
+_main                    maintext     0363
+_motor                   bssBANK0     002E
+_printf                  text3        07BA
+_putch                   text4        0FE5
+_sm1                     bssCOMMON    007D
+_sm2                     bssCOMMON    007C
 btemp                    (abs)        007E
-end_of_initialization    cinit        0013
+end_of_initialization    cinit        001D
+esc_EEP@data             cstackBANK0  0021
+esc_EEP@direc            cstackBANK0  0020
+i1_esc_EEP               text9        07E2
+i1_leer_EEP              text8        0FEF
+i1esc_EEP@data           cstackCOMMON 0071
+i1esc_EEP@direc          cstackCOMMON 0070
+i1leer_EEP@data          cstackCOMMON 0072
+i1leer_EEP@direc         cstackCOMMON 0071
 interrupt_function       intentry     0004
 intlevel0                functab      0000
 intlevel1                functab      0000
@@ -262,6 +374,12 @@ intlevel2                functab      0000
 intlevel3                functab      0000
 intlevel4                functab      0000
 intlevel5                functab      0000
+leer_EEP@data            cstackBANK0  0022
+leer_EEP@direc           cstackBANK0  0021
+printf@ap                cstackBANK0  0026
+printf@c                 cstackBANK0  0027
+printf@f                 cstackBANK0  0021
+putch@dt                 cstackBANK0  0020
 reset_vec                reset_vec    0000
 saved_w                  (abs)        007E
 start                    init         000C
@@ -273,7 +391,235 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 80 in file "Proyecto2.c"
+		line 180 in file "Proyecto2.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels required when called:    5
+ This function calls:
+		_comunicacioneu
+		_confi
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _confi *****************
+ Defined at:
+		line 209 in file "Proyecto2.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _comunicacioneu *****************
+ Defined at:
+		line 317 in file "Proyecto2.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       3       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_esc_EEP
+		_leer_EEP
+		_printf
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _printf *****************
+ Defined at:
+		line 477 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c"
+ Parameters:    Size  Location     Type
+  f               2    1[BANK0 ] PTR const unsigned char 
+		 -> STR_24(28), STR_23(11), STR_22(13), STR_21(40), 
+		 -> STR_20(19), STR_19(18), STR_18(22), STR_17(50), 
+		 -> STR_16(13), STR_15(12), STR_14(13), STR_13(38), 
+		 -> STR_12(13), STR_11(16), STR_10(14), STR_9(42), 
+		 -> STR_8(15), STR_7(19), STR_6(19), STR_5(29), 
+		 -> STR_4(19), STR_3(30), STR_2(18), STR_1(31), 
+ Auto vars:     Size  Location     Type
+  tmpval          4    0        struct .
+  cp              2    0        PTR const unsigned char 
+  len             2    0        unsigned int 
+  val             2    0        unsigned int 
+  c               1    7[BANK0 ] unsigned char 
+  ap              1    6[BANK0 ] PTR void [1]
+		 -> ?_printf(2), 
+  flag            1    0        unsigned char 
+  prec            1    0        char 
+ Return value:  Size  Location     Type
+                  2    1[BANK0 ] int 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       3       0       0       0
+      Totals:         0       7       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_putch
+ This function is called by:
+		_comunicacioneu
+ This function uses a non-reentrant model
+
+
+ *************** function _putch *****************
+ Defined at:
+		line 311 in file "Proyecto2.c"
+ Parameters:    Size  Location     Type
+  dt              1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  dt              1    0[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_printf
+ This function uses a non-reentrant model
+
+
+ *************** function _leer_EEP *****************
+ Defined at:
+		line 171 in file "Proyecto2.c"
+ Parameters:    Size  Location     Type
+  direc           1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  direc           1    1[BANK0 ] unsigned char 
+  data            1    2[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_comunicacioneu
+ This function uses a non-reentrant model
+
+
+ *************** function _esc_EEP *****************
+ Defined at:
+		line 147 in file "Proyecto2.c"
+ Parameters:    Size  Location     Type
+  data            1    wreg     unsigned char 
+  direc           1    0[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  data            1    1[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       1       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_comunicacioneu
+ This function uses a non-reentrant model
+
+
+ *************** function _ISR *****************
+ Defined at:
+		line 57 in file "Proyecto2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -289,73 +635,76 @@ FUNCTION INFORMATION:
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
       Locals:         0       0       0       0       0
-      Temps:          1       0       0       0       0
-      Totals:         1       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels required when called:    2
- This function calls:
-		_confi
- This function is called by:
-		Startup code after reset
- This function uses a non-reentrant model
-
-
- *************** function _confi *****************
- Defined at:
-		line 106 in file "Proyecto2.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          1       0       0       0       0
-      Totals:         1       0       0       0       0
-Total ram usage:        1 bytes
+      Temps:          5       0       0       0       0
+      Totals:         5       0       0       0       0
+Total ram usage:        5 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
-		Nothing
+		i1_esc_EEP
+		i1_leer_EEP
  This function is called by:
-		_main
+		Interrupt level 1
  This function uses a non-reentrant model
 
 
- *************** function _ISR *****************
+ *************** function i1_leer_EEP *****************
  Defined at:
-		line 42 in file "Proyecto2.c"
+		line 171 in file "Proyecto2.c"
  Parameters:    Size  Location     Type
-		None
+  direc           1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-		None
+  direc           1    1[COMMON] unsigned char 
+  data            1    2[COMMON] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+                  1    wreg      unsigned char 
  Registers used:
-		wreg, status,2, status,0
+		wreg
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          4       0       0       0       0
-      Totals:         4       0       0       0       0
-Total ram usage:        4 bytes
+      Locals:         2       0       0       0       0
+      Temps:          1       0       0       0       0
+      Totals:         3       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
  This function is called by:
-		Interrupt level 1
+		_ISR
+ This function uses a non-reentrant model
+
+
+ *************** function i1_esc_EEP *****************
+ Defined at:
+		line 147 in file "Proyecto2.c"
+ Parameters:    Size  Location     Type
+  data            1    wreg     unsigned char 
+  direc           1    0[COMMON] unsigned char 
+ Auto vars:     Size  Location     Type
+  data            1    1[COMMON] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         1       0       0       0       0
+      Locals:         1       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         2       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_ISR
  This function uses a non-reentrant model
 
 
@@ -363,15 +712,27 @@ Total ram usage:        4 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-shared
-		__initialization		CODE           	000F	0000	4
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+		_printf        		CODE           	07BA	0000	40
 
-shared estimated size: 4
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c estimated size: 40
+
+shared
+		i1_esc_EEP     		CODE           	07E2	0000	28
+		__stringtab    		STRING         	03E7	0000	18
+		__initialization		CODE           	000F	0000	14
+		i1_leer_EEP    		CODE           	0FEF	0000	17
+
+shared estimated size: 77
 
 Proyecto2.c
-		_confi         		CODE           	0017	0000	104
-		_ISR           		CODE           	007F	0000	104
-		_main          		CODE           	00E7	0000	62
+		_confi         		CODE           	072C	0000	142
+		_leer_EEP      		CODE           	03D2	0000	21
+		_ISR           		CODE           	0611	0000	283
+		_putch         		CODE           	0FE5	0000	10
+		_main          		CODE           	0363	0000	77
+		_esc_EEP       		CODE           	03B0	0000	34
+		_comunicacioneu		CODE           	0021	0000	834
 
-Proyecto2.c estimated size: 270
+Proyecto2.c estimated size: 1401
 
