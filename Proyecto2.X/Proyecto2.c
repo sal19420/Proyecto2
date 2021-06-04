@@ -15,7 +15,7 @@
 #pragma config BOREN = OFF      // Brown Out Reset Selection bits (BOR disabled)
 #pragma config IESO = OFF       // Internal External Switchover bit (Internal/External Switchover mode is disabled)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is disabled)
-#pragma config LVP = ON         // Low Voltage Programming Enable bit (RB3/PGM pin has PGM function, low voltage programming enabled)
+#pragma config LVP = OFF         // Low Voltage Programming Enable bit (RB3/PGM pin has PGM function, low voltage programming enabled)
 
 // CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
@@ -32,9 +32,18 @@
 ///////Prototipos////////
 void confi(void);
 void ISR (void);
+void esc_EEP (char data, char direc);
+char leer_EEP (char direc);
 //////VARIABLES/////
 int motor;
 int ciclo;
+char data;
+char direc;
+char lec1;
+char lec2;
+char lec3;
+
+
 
 
 /////Interrupcion///////////
@@ -43,28 +52,61 @@ void __interrupt() ISR(void){
     if (PIR1bits.ADIF){
         if(ADCON0bits.CHS == 0){
             CCPR1L = (ADRESH>>1)+127;
+            lec1 = ADRESH;
+            
         }
         else if(ADCON0bits.CHS == 1) {
             CCPR2L = (ADRESH>>1)+125;
+            lec2 = ADRESH; 
         }
         else if (ADCON0bits.CHS == 2){
            motor = (ADRESH);
+           lec3 = motor; 
           
         }
         PIR1bits.ADIF = 0;
     }
-    
+    if (RBIF ==1)
+    {
+        if (PORTBbits.RB1 == 0){
+            ADCON0bits.ADON = 0;
+            PORTBbits.RB6 = 1;
+            lec1 = leer_EEP (0x17);
+            lec2 = leer_EEP (0x18);
+            lec3 = leer_EEP(0x19);
+            
+            CCPR1L = lec1;
+            CCPR2L = lec2;
+            
+            
+        }
+        else if (PORTBbits.RB0 == 0){
+            PORTBbits.RB7 = 1;
+            esc_EEP (lec1, 0x17);
+            esc_EEP (lec2, 0x18);
+            esc_EEP (lec3, 0x19);
+            __delay_ms(1000);
+        
+        }
+        else {
+            PORTBbits.RB6 = 0;
+            PORTBbits.RB7 = 0;
+            
+        
+        }
+        INTCONbits.RBIF = 0;
+    }
    ////INT TMR0/////
     if (INTCONbits.T0IF ==1){
         ciclo++;
         if (ciclo > motor) {
-            RD0 = 0;
-            RD1 = 0;
+            RD2 = 0;
+            RD3 = 0;
             
         }
         else {
-            RD0 = 1;
-            RD1 =1;
+            RD2 = 1;
+            RD3 =1;
           
         }
        
@@ -75,6 +117,38 @@ void __interrupt() ISR(void){
         INTCONbits.T0IF = 0;
     }
     return;
+}
+void esc_EEP (char data, char direc){
+    EEADR = direc;
+    EEDAT = data; 
+    
+    INTCONbits.GIE = 0;
+    
+    EECON1bits.EEPGD = 0;
+    EECON1bits.WREN = 1;
+    
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    
+    EECON1bits.WR = 1;
+    
+    while(PIR2bits.EEIF == 0);
+    PIR2bits.EEIF = 0;
+    
+    
+    EECON1bits.WREN = 0;
+    
+    
+
+}
+
+char leer_EEP (char direc){
+    EEADR = direc;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    char data = EEDATA;
+    return data; 
+   
 }
 
 void main(void) {
@@ -109,7 +183,12 @@ void confi(void){
   //Aqui configuramos entradas y salidas
   TRISA = 0b00000111;
   TRISD = 0X00;
+  TRISB = 0b00000111;
   
+  WPUB = 0X03;
+  IOCB = 0x03;    
+  
+  PORTB = 0X00;
   PORTA = 0X00;
   PORTD = 0X00;
   // colocamos nuestro oscilador interno en 8Mhz
@@ -168,5 +247,17 @@ void confi(void){
   INTCONbits.GIE = 1;
   INTCONbits.T0IE = 1;
   INTCONbits.T0IF = 0;
+  INTCONbits.RBIE = 1;
+  INTCONbits.RBIF = 0;
+  
+  
+  
+  // Configuracion de Pull 
+  OPTION_REGbits.nRBPU = 0;
+  WPUBbits.WPUB0 = 1;
+  WPUBbits.WPUB1 = 1;
+  IOCBbits.IOCB0 = 1;
+  IOCBbits.IOCB1 = 1;
+  
   return;
 }
