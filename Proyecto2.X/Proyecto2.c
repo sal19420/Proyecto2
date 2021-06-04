@@ -26,6 +26,7 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdio.h>
 
 #define _XTAL_FREQ 8000000 
 
@@ -34,6 +35,8 @@ void confi(void);
 void ISR (void);
 void esc_EEP (char data, char direc);
 char leer_EEP (char direc);
+void putch(char data);
+void comunicacioneu (void);
 //////VARIABLES/////
 int motor;
 int ciclo;
@@ -42,6 +45,7 @@ char direc;
 char lec1;
 char lec2;
 char lec3;
+char bandera;
 
 
 
@@ -159,6 +163,9 @@ void main(void) {
     
     while(1)
     {
+        if (bandera == 1){
+            comunicacioneu();
+        }
     
         if(ADCON0bits.GO == 0){
             if (ADCON0bits.CHS == 0){
@@ -261,5 +268,197 @@ void confi(void){
   IOCBbits.IOCB0 = 1;
   IOCBbits.IOCB1 = 1;
   
+  
+  //Configuracion de TX y RX
+    TXSTAbits.SYNC  = 0;    //Modo asincrono
+    TXSTAbits.BRGH  = 1;    //Activamos la alta velocidad del Baud rate
+    
+    BAUDCTLbits.BRG16   = 1;    //Utilizamos los 16 bits del Baud rate
+    
+    SPBRG   = 207;  //Elegimos el baud rate 9600
+    SPBRGH  = 0;
+    
+    RCSTAbits.SPEN  = 1;    //Activamos los puertos seriales
+    RCSTAbits.RX9   = 0;    //No utilizamos los nueve bits
+    RCSTAbits.CREN  = 1;    //Activamos la recepción continua
+    
+    TXSTAbits.TXEN  = 1;    //Activamos la transmición
+  
   return;
+}
+//**********************************EUSART**************************************
+//******************************************************************************
+void putch(char data){
+    while (TXIF == 0);      //Esperar a que se pueda enviar un nueva caracter
+    TXREG = data;           //Transmitir un caracter
+    return;
+}
+
+void comunicacioneu (void) {
+    
+    __delay_ms(100);    //Printf llama a la funcion Putch para enviar todos los
+    printf("\rQue accion desea ejecutar?: \r"); //caracteres dentro de las comillas
+    __delay_ms(100);    //y mostramos todas las opciones del menu
+    printf("    (1) Controlar motores \r");
+    __delay_ms(100);
+    printf("    (2) EEPROM  \r");
+    __delay_ms(100);
+    printf("    (3) Terminar \r");
+    
+    while (RCIF == 0);  //Esperar a que se ingrese un dato de la computadora
+    
+    if (RCREG == '1') { //Si presionamos 1 mandamos un cadena de caracteres
+        __delay_ms(00);
+        printf("\r\rQue motor desea controlar:");
+        __delay_ms(100);
+        printf("\r\r (1)Servomotor 1");
+        __delay_ms(100);
+        printf("\r\r (2)Servomotor 2");
+        __delay_ms(100);
+        printf("\r\r (3)DC");
+        
+        while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
+        
+        if (RCREG == '1') {
+            __delay_ms(00);
+            printf("\r\rQue direccion:");
+            __delay_ms(100);
+            printf("\r\r (a)Derecha");
+            __delay_ms(100);
+            printf("\r\r (b)Izquierda");
+            __delay_ms(100);
+            printf("\r\r (c)Centro");
+            
+            while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
+            
+            if (RCREG == 'a') {
+                CCPR1L = (250 >> 1) + 125;
+            }
+            
+            else if (RCREG == 'b') {
+                CCPR1L = (0 >> 1) + 125;
+            }
+            
+            else if (RCREG == 'c') {
+                CCPR1L = (127 >> 1) + 125;
+            }
+            
+            else {
+                NULL;
+            }   
+        }
+        
+        if (RCREG == '2') {
+            __delay_ms(00);
+            printf("\r\rQue altura del aleron:");
+            __delay_ms(100);
+            printf("\r\r (a)Arriba");
+            __delay_ms(100);
+            printf("\r\r (b)Abajo");
+            __delay_ms(100);
+            printf("\r\r (c)Centro");
+            
+            while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
+            
+            if (RCREG == 'a') {
+                CCPR2L = (250 >> 1) + 125;
+            }
+            
+            else if (RCREG == 'b') {
+                CCPR2L = (0 >> 1) + 125;
+            }
+            
+            else if (RCREG == 'c') {
+                CCPR2L = (127 >> 1) + 125;
+            }
+            
+            else {
+                NULL;
+            }   
+        }
+        
+        if (RCREG == '3') {
+            __delay_ms(00);
+            printf("\r\rQue velocidad:");
+            __delay_ms(100);
+            printf("\r\r (a)Ilegal");
+            __delay_ms(100);
+            printf("\r\r (b)Parar");
+            __delay_ms(100);
+            printf("\r\r (c)Legal");
+            
+            while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
+            
+            if (RCREG == 'a') {
+                motor = 255;
+            }
+            
+            else if (RCREG == 'b') {
+                motor = 0;
+            }
+            
+            else if (RCREG == 'c') {
+                motor = 127;
+            }
+            
+            else {
+                NULL;
+            }   
+        }
+        
+    }
+    
+    else if (RCREG == '2') {    //Si presionamos dos enviamos un caracter a PORTA
+        __delay_ms(500);    //Preguntamos el caracter
+        printf("\r\rQue desea hacer en la memoria EEPROM:");
+        __delay_ms(100);
+        printf("\r\r (a)Grabar");
+        __delay_ms(100);
+        printf("\r\r (b)Leer");
+        
+        
+        while (RCIF == 0);  //Esperamos a que el usuario ingrese un dato
+        
+        if (RCREG == 'a') {
+            PORTBbits.RB0 = 1;
+            
+            esc_EEP(lec1, 0x10);
+            esc_EEP(lec2, 0x11);
+            
+            __delay_ms(1000);
+            PORTBbits.RB0 = 0;
+        }
+            
+        else if (RCREG == 'b') {
+            ADCON0bits.ADON = 0;
+            PORTBbits.RB1 = 1;
+            
+            lec1 = leer_EEP(0x10);
+            lec2 = leer_EEP(0x11);
+            
+            CCPR1L = (lec1 >> 1) + 125;
+            CCPR2L = (lec2 >> 1) + 125;
+            
+            __delay_ms(2500);
+            ADCON0bits.ADON = 1;
+            PORTBbits.RB1 = 0;
+        }
+            
+        else {
+            NULL;
+        }
+        
+    }
+    
+    else if (RCREG == '3') {    //Si presionamos dos enviamos un caracter a PORTB
+        __delay_ms(500);    //Preguntamos el caracter
+        printf("\r\rAdios\r");
+        bandera = 0;
+        PORTBbits.RB5 = 0;
+    } 
+    
+    else {  //Si el usuario presiona cualquier otro caracter no sucede nada
+        NULL; 
+    }
+    return;
 }

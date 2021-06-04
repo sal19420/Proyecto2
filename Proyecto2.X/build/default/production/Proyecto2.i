@@ -2649,6 +2649,100 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 # 29 "Proyecto2.c" 2
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 1 3
+
+
+
+# 1 "/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 5 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+# 1 "/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/__null.h" 1 3
+# 6 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+
+
+
+
+
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 12 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+# 43 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 3
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/errno.h" 1 3
+# 29 "/Applications/microchip/xc8/v2.31/pic/include/c90/errno.h" 3
+extern int errno;
+# 9 "/Applications/microchip/xc8/v2.31/pic/include/c90/conio.h" 2 3
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 86 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 30 "Proyecto2.c" 2
 
 
 
@@ -2657,6 +2751,8 @@ void confi(void);
 void ISR (void);
 void esc_EEP (char data, char direc);
 char leer_EEP (char direc);
+void putch(char data);
+void comunicacioneu (void);
 
 int motor;
 int ciclo;
@@ -2665,6 +2761,7 @@ char direc;
 char lec1;
 char lec2;
 char lec3;
+char bandera;
 
 
 
@@ -2782,6 +2879,9 @@ void main(void) {
 
     while(1)
     {
+        if (bandera == 1){
+            comunicacioneu();
+        }
 
         if(ADCON0bits.GO == 0){
             if (ADCON0bits.CHS == 0){
@@ -2884,5 +2984,197 @@ void confi(void){
   IOCBbits.IOCB0 = 1;
   IOCBbits.IOCB1 = 1;
 
+
+
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 1;
+
+    BAUDCTLbits.BRG16 = 1;
+
+    SPBRG = 207;
+    SPBRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 1;
+
+    TXSTAbits.TXEN = 1;
+
   return;
+}
+
+
+void putch(char data){
+    while (TXIF == 0);
+    TXREG = data;
+    return;
+}
+
+void comunicacioneu (void) {
+
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    printf("\rQue accion desea ejecutar?: \r");
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    printf("    (1) Controlar motores \r");
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    printf("    (2) EEPROM  \r");
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    printf("    (3) Terminar \r");
+
+    while (RCIF == 0);
+
+    if (RCREG == '1') {
+        _delay((unsigned long)((00)*(8000000/4000.0)));
+        printf("\r\rQue motor desea controlar:");
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        printf("\r\r (1)Servomotor 1");
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        printf("\r\r (2)Servomotor 2");
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        printf("\r\r (3)DC");
+
+        while (RCIF == 0);
+
+        if (RCREG == '1') {
+            _delay((unsigned long)((00)*(8000000/4000.0)));
+            printf("\r\rQue direccion:");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (a)Derecha");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (b)Izquierda");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (c)Centro");
+
+            while (RCIF == 0);
+
+            if (RCREG == 'a') {
+                CCPR1L = (250 >> 1) + 125;
+            }
+
+            else if (RCREG == 'b') {
+                CCPR1L = (0 >> 1) + 125;
+            }
+
+            else if (RCREG == 'c') {
+                CCPR1L = (127 >> 1) + 125;
+            }
+
+            else {
+                (0);
+            }
+        }
+
+        if (RCREG == '2') {
+            _delay((unsigned long)((00)*(8000000/4000.0)));
+            printf("\r\rQue altura del aleron:");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (a)Arriba");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (b)Abajo");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (c)Centro");
+
+            while (RCIF == 0);
+
+            if (RCREG == 'a') {
+                CCPR2L = (250 >> 1) + 125;
+            }
+
+            else if (RCREG == 'b') {
+                CCPR2L = (0 >> 1) + 125;
+            }
+
+            else if (RCREG == 'c') {
+                CCPR2L = (127 >> 1) + 125;
+            }
+
+            else {
+                (0);
+            }
+        }
+
+        if (RCREG == '3') {
+            _delay((unsigned long)((00)*(8000000/4000.0)));
+            printf("\r\rQue velocidad:");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (a)Ilegal");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (b)Parar");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            printf("\r\r (c)Legal");
+
+            while (RCIF == 0);
+
+            if (RCREG == 'a') {
+                motor = 255;
+            }
+
+            else if (RCREG == 'b') {
+                motor = 0;
+            }
+
+            else if (RCREG == 'c') {
+                motor = 127;
+            }
+
+            else {
+                (0);
+            }
+        }
+
+    }
+
+    else if (RCREG == '2') {
+        _delay((unsigned long)((500)*(8000000/4000.0)));
+        printf("\r\rQue desea hacer en la memoria EEPROM:");
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        printf("\r\r (a)Grabar");
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        printf("\r\r (b)Leer");
+
+
+        while (RCIF == 0);
+
+        if (RCREG == 'a') {
+            PORTBbits.RB0 = 1;
+
+            esc_EEP(lec1, 0x10);
+            esc_EEP(lec2, 0x11);
+
+            _delay((unsigned long)((1000)*(8000000/4000.0)));
+            PORTBbits.RB0 = 0;
+        }
+
+        else if (RCREG == 'b') {
+            ADCON0bits.ADON = 0;
+            PORTBbits.RB1 = 1;
+
+            lec1 = leer_EEP(0x10);
+            lec2 = leer_EEP(0x11);
+
+            CCPR1L = (lec1 >> 1) + 125;
+            CCPR2L = (lec2 >> 1) + 125;
+
+            _delay((unsigned long)((2500)*(8000000/4000.0)));
+            ADCON0bits.ADON = 1;
+            PORTBbits.RB1 = 0;
+        }
+
+        else {
+            (0);
+        }
+
+    }
+
+    else if (RCREG == '3') {
+        _delay((unsigned long)((500)*(8000000/4000.0)));
+        printf("\r\rAdios\r");
+        bandera = 0;
+        PORTBbits.RB5 = 0;
+    }
+
+    else {
+        (0);
+    }
+    return;
 }
