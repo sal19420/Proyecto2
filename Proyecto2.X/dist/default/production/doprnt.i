@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
+=======
+# 1 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
+<<<<<<< HEAD
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c" 2
@@ -12,21 +17,42 @@
 
 
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__size_t.h" 1 3
+=======
+# 1 "/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/language_support.h" 1 3
+# 2 "<built-in>" 2
+# 1 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c" 2
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 1 3
+
+
+
+# 1 "/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/__size_t.h" 1 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
 typedef unsigned size_t;
+<<<<<<< HEAD
 # 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
 
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
 # 5 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+=======
+# 5 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+# 1 "/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/__null.h" 1 3
+# 6 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
 
+<<<<<<< HEAD
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdarg.h" 1 3
+=======
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdarg.h" 1 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
@@ -40,15 +66,25 @@ extern void * __va_start(void);
 
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
+<<<<<<< HEAD
 # 11 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
 # 43 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+=======
+# 12 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+# 43 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 struct __prbuf
 {
  char * ptr;
  void (* func)(char);
 };
+<<<<<<< HEAD
 # 85 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 1 3
+=======
+# 85 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 3
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/conio.h" 1 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
@@ -56,11 +92,18 @@ struct __prbuf
 
 
 
+<<<<<<< HEAD
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 1 3
 # 29 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 3
 extern int errno;
 # 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 2 3
 
+=======
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/errno.h" 1 3
+# 29 "/Applications/microchip/xc8/v2.31/pic/include/c90/errno.h" 3
+extern int errno;
+# 9 "/Applications/microchip/xc8/v2.31/pic/include/c90/conio.h" 2 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
@@ -77,8 +120,12 @@ extern __bit kbhit(void);
 
 extern char * cgets(char *);
 extern void cputs(const char *);
+<<<<<<< HEAD
 # 85 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
 
+=======
+# 86 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 2 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 extern int cprintf(char *, ...);
@@ -87,7 +134,11 @@ extern int cprintf(char *, ...);
 
 
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+<<<<<<< HEAD
 # 180 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+=======
+# 180 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdio.h" 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
@@ -104,9 +155,14 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
+<<<<<<< HEAD
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\ctype.h" 1 3
+=======
+# 2 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c" 2
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/ctype.h" 1 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
@@ -125,9 +181,14 @@ extern __bit iscntrl(char);
 
 extern char toupper(char);
 extern char tolower(char);
+<<<<<<< HEAD
 # 2 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
+=======
+# 3 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c" 2
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdlib.h" 1 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
@@ -158,7 +219,11 @@ typedef struct {
  unsigned long quot;
  unsigned long rem;
 } uldiv_t;
+<<<<<<< HEAD
 # 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+=======
+# 65 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdlib.h" 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 extern double atof(const char *);
 extern double strtod(const char *, const char **);
 extern int atoi(const char *);
@@ -194,12 +259,20 @@ extern void * realloc(void *, size_t);
 
 
 
+<<<<<<< HEAD
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\xc8debug.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 99 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 2 3
 
+=======
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/xc8debug.h" 1 3
+# 13 "/Applications/microchip/xc8/v2.31/pic/include/c90/xc8debug.h" 3
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 100 "/Applications/microchip/xc8/v2.31/pic/include/c90/stdlib.h" 2 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
@@ -223,6 +296,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
+<<<<<<< HEAD
 # 3 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 1 3
@@ -231,6 +305,15 @@ extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);
 # 36 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 3
+=======
+# 4 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c" 2
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/string.h" 1 3
+# 14 "/Applications/microchip/xc8/v2.31/pic/include/c90/string.h" 3
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+# 36 "/Applications/microchip/xc8/v2.31/pic/include/c90/string.h" 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 extern char * strcat(char *, const char *);
 extern char * strcpy(char *, const char *);
 extern char * strncat(char *, const char *, size_t);
@@ -256,6 +339,7 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
+<<<<<<< HEAD
 # 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c" 2
 
 
@@ -267,6 +351,18 @@ extern char * strrichr(const char *, int);
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__unsupported.h" 1 3
 # 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 2 3
 # 30 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\math.h" 3
+=======
+# 5 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c" 2
+
+
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/math.h" 1 3
+
+
+
+# 1 "/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/__unsupported.h" 1 3
+# 5 "/Applications/microchip/xc8/v2.31/pic/include/c90/math.h" 2 3
+# 30 "/Applications/microchip/xc8/v2.31/pic/include/c90/math.h" 3
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -293,15 +389,22 @@ extern double ldexp(double, int);
 extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
+<<<<<<< HEAD
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\float.h" 1 3
 # 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c" 2
 
+=======
+# 8 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c" 2
+# 1 "/Applications/microchip/xc8/v2.31/pic/include/c90/float.h" 1 3
+# 9 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c" 2
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
 
 
 
 #pragma warning disable 350
+<<<<<<< HEAD
 # 463 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
 int
 # 477 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
@@ -311,12 +414,27 @@ printf(const char * f, ...)
 # 512 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
  char c;
 # 521 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
+=======
+# 463 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+int
+# 477 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+printf(const char * f, ...)
+{
+ va_list ap;
+# 512 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+ char c;
+# 521 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
  signed char prec;
 
 
 
  unsigned char flag;
+<<<<<<< HEAD
 # 540 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
+=======
+# 540 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
  union {
   unsigned long vd;
   double integ;
@@ -338,11 +456,19 @@ printf(const char * f, ...)
    (putch(c) );
    continue;
   }
+<<<<<<< HEAD
 # 1448 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
   {
 # 1495 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
   }
 # 1559 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
+=======
+# 1448 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+  {
+# 1495 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+  }
+# 1559 "/Applications/microchip/xc8/v2.31/pic/sources/c90/common/doprnt.c"
+>>>>>>> 0c116a784502715c7ad9849dea86a83d51cd8138
  }
 
 
